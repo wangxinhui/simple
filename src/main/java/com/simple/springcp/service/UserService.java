@@ -6,7 +6,15 @@ import com.simple.springcp.model.User;
 
 public class UserService {
 
-    private UserDAO userDAO = new UserDAOImpl();
+    private UserDAO userDAO;
+
+    public UserDAO getUserDAO() {
+        return userDAO;
+    }
+
+    public void setUserDAO(UserDAO userDAO) {
+        this.userDAO = userDAO;
+    }
 
     public void save(User user){
         userDAO.save(user);
