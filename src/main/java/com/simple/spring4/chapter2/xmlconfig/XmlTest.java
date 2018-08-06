@@ -11,10 +11,10 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 public class XmlTest {
 
     @Autowired
-    private CompactDisc compactDisc;
+    private MediaPlayer mediaPlayer;
 
     @Test
     public void test1() {
-        compactDisc.play();
+        mediaPlayer.play();
     }
 }

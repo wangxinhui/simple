@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
-       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-    <bean id="com" class="com.simple.spring4.chapter2.xmlconfig.SgtPeppers"></bean>
+    <bean id="compactDisc" class="com.simple.spring4.chapter2.xmlconfig.SgtPeppers"></bean>
+
+    <bean  class="com.simple.spring4.chapter2.xmlconfig.CDPlayer">
+        <constructor-arg ref="compactDisc"/>
+    </bean>
 </beans>
