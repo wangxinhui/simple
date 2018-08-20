@@ -2,8 +2,56 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:c="http://www.springframework.org/schema/c"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
-    <bean id="peppers" class="com.simple.spring4.chapter2.xmlconfig.SgtPeppers"></bean>
+ <bean id="peppers" class="com.simple.spring4.chapter2.xmlconfig.SgtPeppers"></bean>
 
-    <bean class="com.simple.spring4.chapter2.xmlconfig.CDPlayer" c:aa-ref="peppers"/>
+ <!--元素构造器-->
+ <!--<bean id="blankDisc" class="com.simple.spring4.chapter2.xmlconfig.BlankDisc">-->
+ <!--<constructor-arg value="Sgt. Pepper's Lonely Hearts Club Band skr"/>-->
+ <!--<constructor-arg value="The Beatles"/>-->
+ <!--</bean>-->
 
+ <!--c-命名空间-->
+ <!--<bean id="blankDisc" class="com.simple.spring4.chapter2.xmlconfig.BlankDisc"-->
+ <!--c:title="Sgt. Pepper's Lonely Hearts Club Band skr"-->
+ <!--c:artist="The Beatles"></bean>-->
+
+ <!--<bean id="blankDisc" class="com.simple.spring4.chapter2.xmlconfig.BlankDisc"-->
+       <!--c:_0="Sgt. Pepper's Lonely Hearts Club Band skr"-->
+       <!--c:_1="The Beatles"></bean>-->
+
+ <!--带List的BlankDisc -->
+ <bean id="blankDisc" class="com.simple.spring4.chapter2.xmlconfig.BlankDisc">
+  <constructor-arg value="Sgt. Pepper's Lonely Hearts Club Band skr"/>
+  <constructor-arg value="The Beatles"/>
+  <constructor-arg>
+   <!--note: list and set : set can appear same value , and set is unordered.-->
+   <!--<list>-->
+    <!--<value>Sgt. Pepper's Lonely Hearts Club Band skr</value>-->
+    <!--<value>With a Little Help from My Friends</value>-->
+    <!--<value>Lucy in the Sky with Diamonds</value>-->
+    <!--<value>Getting Better</value>-->
+    <!--<value>Fixing a Hole</value>-->
+   <!--</list>-->
+   <set>
+    <value>Sgt. Pepper's Lonely Hearts Club Band skr</value>
+    <value>With a Little Help from My Friends</value>
+    <value>Lucy in the Sky with Diamonds</value>
+    <value>Getting Better</value>
+    <value>Fixing a Hole</value>
+    <value>Fixing a Hole</value>
+   </set>
+  </constructor-arg>
+ </bean>
+
+ <!--<bean id="discography" class="com.simple.spring4.chapter2.xmlconfig.Discography">-->
+  <!--<constructor-arg value="The Beatles"/>-->
+  <!--<constructor-arg>-->
+   <!--<list>-->
+    <!--<ref bean="peppers"></ref>-->
+    <!--<ref bean="blankDisc"></ref>-->
+   <!--</list>-->
+  <!--</constructor-arg>-->
+ <!--</bean>-->
+
+ <bean class="com.simple.spring4.chapter2.xmlconfig.CDPlayer" c:_-ref="blankDisc"/>
 </beans>
