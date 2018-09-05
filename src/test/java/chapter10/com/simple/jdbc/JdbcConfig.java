@@ -17,7 +17,7 @@ import javax.sql.DataSource;
 @Configuration
 public class JdbcConfig {
 
-  @Bean(name = "ds")
+  @Bean
   public DataSource dataSource() {
     BasicDataSource ds = new BasicDataSource();
     ds.setDriverClassName("com.mysql.jdbc.Driver");
