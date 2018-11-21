@@ -2,6 +2,7 @@ package com.simple.spring4.chapter11.db;
 
 import com.simple.spring4.chapter11.domain.Spitter;
 
+import javax.persistence.Entity;
 import java.util.List;
 
 /**

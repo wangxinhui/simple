@@ -1,6 +1,8 @@
 package chapter11.com.simple.jdbc;
 
 import com.simple.spring4.chapter11.db.SpitterRepository;
+import com.simple.spring4.chapter11.db.hiberate4.BaseDAO;
+import com.simple.spring4.chapter11.db.hiberate4.BaseDAOImpl;
 import com.simple.spring4.chapter11.db.hiberate4.HibernateSpitterRepository;
 import org.apache.commons.dbcp2.BasicDataSource;
 import org.hibernate.SessionFactory;
@@ -33,7 +35,7 @@ public class JdbcConfig implements TransactionManagementConfigurer{
     public DataSource dataSource() {
         BasicDataSource ds = new BasicDataSource();
         ds.setDriverClassName("com.mysql.jdbc.Driver");
-        ds.setUrl("jdbc:mysql://localhost:3306/crrw?useUnicode=true&characterEncoding=UTF-8");
+        ds.setUrl("jdbc:mysql://localhost:3306/test?useUnicode=true&characterEncoding=UTF-8");
         ds.setUsername("root");
         ds.setPassword("123456");
         return ds;
@@ -52,13 +54,6 @@ public class JdbcConfig implements TransactionManagementConfigurer{
         return object;
     }
 
-
-
-
-    @Bean
-    public SpitterRepository spitterRepository(SessionFactory sessionFactory){
-        return new HibernateSpitterRepository(sessionFactory);
-    }
 
 
     @Override

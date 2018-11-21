@@ -1,6 +1,7 @@
 package chapter11.com.simple.jdbc;
 
 import com.simple.spring4.chapter11.db.SpitterRepository;
+import com.simple.spring4.chapter11.domain.Spitter;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,6 +23,8 @@ public class SpitterReppositoryTest {
     @Test
     @Transactional
     public void count(){
-        System.out.println( spitterRepository.count());
+        Spitter spitter = new Spitter(null, "newbee", "letmein", "New Bee",
+                "newbee@habuma.com", true);
+        spitterRepository.save(spitter);
     }
 }

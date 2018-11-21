@@ -1,6 +1,12 @@
 package com.simple.spring4.chapter11.domain;
 
-public class Spitter {
+import javax.persistence.Entity;
+import javax.persistence.Table;
+import java.io.Serializable;
+
+@Entity
+@Table(name="spitter")
+public class Spitter implements Serializable{
   
   private Long id;
   private String username;
